@@ -19,6 +19,8 @@ Prime Numbers are the basic building blocks of all numbers. Composite Numbers ar
 
 According to the Unique Prime-Factorization theorem, there is only one unique set of prime factors for any integer greater than 1. If 1 is a prime number, then this theorem is invalid. For example, if 1 is a prime number, then 3 = 3 * 1 = 3 * 1 * 1 = 3 * 1 * 1 * 1 = ...
 
+<br/>
+
 ### References
 1. https://en.wikipedia.org/wiki/Integer_factorization
 2. https://en.wikipedia.org/wiki/Composite_number
