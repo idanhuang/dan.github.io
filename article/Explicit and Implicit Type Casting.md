@@ -25,7 +25,7 @@ Implict type conversion (a.k.a widening type conversion) means conversion of dat
   float f = 1;   // complie ok. integer 1 is implicitly converted to float, since int data type has lower precision.
 ```
 
-![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/Single-precision-and-double-precision-numbers.png)
+![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/ImplicitTypeCastingPrimitives.png)
 
 
 <br/>
