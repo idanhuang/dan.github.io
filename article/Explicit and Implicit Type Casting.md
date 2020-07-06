@@ -6,7 +6,7 @@ In strongly-typed programming languages like C# and Java, when a variable is dec
 
 ## Magnitude and Precision
 
-![image](https://github.com/idanhuang/LearningNotes/blob/master/img/Single-precision-and-double-precision-numbers.png)
+![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/Single-precision-and-double-precision-numbers.png)
 - Magnitude <br/>
 Magnitude denotes the range of a given data type. Magnitude of a given data type has no direct relevance to the number of bits it holds. For example, 'Long' has 64 bits which can represent range from -2^63 to 2^63-1. 'Float' type numbers are represented using IEEE 754 single floating point notation, even though float data type only has 32 bits, it has a valid range about from -3.4 * 10^38 to 3.4 * 10^38, which is larger range. Actually magnitude is determined by the exponent digits. 
 
@@ -25,7 +25,7 @@ Implict type conversion (a.k.a widening type conversion) means conversion of dat
   float f = 1;   // complie ok. integer 1 is implicitly converted to float, since int data type has lower precision.
 ```
 
-![image](https://github.com/idanhuang/LearningNotes/blob/master/img/ImplicitTypeCastingPrimitives.png)
+![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/Single-precision-and-double-precision-numbers.png)
 
 
 <br/>
