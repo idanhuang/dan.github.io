@@ -9,7 +9,6 @@ Each partitioning only excludes one elements, so the time complexity is n + (n-1
 - Average case <br/>
 Each partitioning excludes half of all the elements, so the time complexity is n + n/2 + n/4 + ... + 1 = 2n*[1-(1/2)^n] < 2n, which is O(n).
 
-## Persudocode
 
 ## Implementation
 ```C#
