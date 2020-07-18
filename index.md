@@ -1,7 +1,7 @@
 # Learning Notes
 
 ## Alogrithm
-- [Quickselect](https://github.com/idanhuang/idanhuang.github.io/blob/master/article/Quick%20Select.md)
+- [Quickselect](https://github.com/idanhuang/idanhuang.github.io/blob/master/article/Quickselect.md)
 
 ## Math
 - [Prime Factorization](https://github.com/idanhuang/idanhuang.github.io/blob/master/article/Prime%20Factorization.md)
