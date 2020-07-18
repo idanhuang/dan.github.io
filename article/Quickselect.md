@@ -1,13 +1,15 @@
 # Quickselect
-Quickselect is a selection algorithm to find the Kth smallest element in an unsorted list. Quickselect uses the same overall approach as Quicksort, choosing one element as the pivot and then partition the elements in two based on the pivot. Like Quicksort, it is fast in practice but has poor worst-case performance.
+Quickselect is a selection algorithm to find the Kth smallest/largest element in an unsorted list. Quickselect uses the same overall approach as Quicksort, choosing one element as the pivot and then partition the elements in two based on the pivot. 
 
 ## Time complextiy
-The worst-case time complexity is O(n^2), the average and best case time complexity is O(n).
+Like Quicksort, Quickselect is fast in practice but has poor worst-case performance. The worst-case time complexity is O(n^2), the average and best case time complexity is O(n).
 
 - Worst-case <br/>
 Each partitioning only excludes one elements, so the time complexity is n + (n-1) + (n-2) + ... + 2 + 1 = n*(n+1)/2, which is O(n^2). 
 - Average case <br/>
 Each partitioning excludes half of all the elements, so the time complexity is n + n/2 + n/4 + ... + 1 = 2n*[1-(1/2)^n] < 2n, which is O(n).
+
+## Persudocode
 
 ## Implementation
 ```C#
