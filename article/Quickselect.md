@@ -69,7 +69,7 @@ public class Solution
 }
 ```
 
-## Implementation
+## FindKthLargest
 ```C#
 public class Solution
 {
