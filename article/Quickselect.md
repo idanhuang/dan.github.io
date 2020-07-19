@@ -1,5 +1,5 @@
 # Quickselect
-Quickselect is a selection algorithm to find the Kth smallest/largest element in an unsorted list. Quickselect uses the same overall approach as Quicksort, choosing one element as the pivot and then partition the elements in two based on the pivot (every element on the left is less than the pivot and evey element on the right is greater than the pivot). 
+Quickselect is a selection algorithm to find the Kth smallest/largest element in an unsorted list. Quickselect uses the same overall approach as Quicksort, choosing one element as the pivot and then partition the elements in two based on the pivot, but Quickselect only recurses into one side that has the element it is searching for.
 
 ## Time complextiy
 Like Quicksort, Quickselect is fast in practice but has poor worst-case performance. The worst-case time complexity is O(n^2), the average and best case time complexity is O(n).
