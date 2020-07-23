@@ -21,5 +21,5 @@ It takes one number and inverts all bits of it.
 - << (left shift)
 It takes 2 numbers. The first operand is number we will take left shift on, the second operand decides the number of digits to shift.
 
-- >> (right shift)
+- \>> (right shift)
 It takes 2 numbers. The first operand is the number we will take right shif on, the second operand decides the numebr of digits to shift.
