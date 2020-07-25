@@ -5,28 +5,27 @@ The Boyer-Moore majority vote algorithm is to find the majority element in an ar
 
 ## Algorithm
 ```
-Initialize majority element and counter = 0
+Initialize candidate and counter = 0
 For each element x in the array:
   if counter = 0
-    majority = x and counter++;
-  else if x == majority
+    candidate = x and counter++;
+  else if x == candidate
     counter++;
   else
     counter--;
-return majority;
+return candidate;
 ```
 
 
 ## Correctness
-When applying the majority vote algorithm on an array, only one of below two cases can happen (Let C be the 1st majority candidate):
-- case 1: counter of C never drops to zero through out the array;
+When applying the majority vote algorithm on an array, only one of below two cases can happen (Let C be the 1st candidate):
+- case 1: counter of C never drops to zero through out the array.
 - case 2: counter of C drops to zero at some point.
 
 If case 1, then C is the majority element. If case 2, then there are two sub cases:
+- case 2.1: If there exist a majority element M and it has never appeared in the Visited sub-array, then it must be the majority of Not-Visited subarray (variable majority will hold M at the end).<br/>
 
-|---------Visited---------|---------Not Visited---------|
-  
-- case 2.1: If there exist a majority element M and it has never appeared in the Visited sub-array, then it must be the majority of Not-Visited subarray (variable majority will hold M at the end).
+      |---------Visited---------|---------NotVisited---------|
 - case 2.2: If there exist a majority element M and it has appeared in the Visited subarray. Assuming the array has N elements and Visited has X elements, then M appeared in Visited subarray at most X/2 times. Since total number of M is not less than N/2 + 1, hence the number of M exist in Not-Visited subarry is greater than (N/2 + 1) - X/2 = (N - X)/2 + 1. So M is the majority of Not-Visited (variable majority will hold M at the end).
 
 
