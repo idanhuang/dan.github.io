@@ -29,6 +29,33 @@ If case 1, then C is the majority element. If case 2, then there are two sub cas
       |---------Visited---------|---------NotVisited---------|
 
 
+## Implementation
+```C#
+public class Solution {
+    public int MajorityElement(int[] nums) {
+     
+        if(nums == null || nums.Length == 0)
+            return Int32.MinValue;
+        
+        int candidate = Int32.MinValue, counter = 0;
+        foreach(int num in nums)
+        {
+            if(counter == 0)
+            {
+                candidate = num;
+                counter++;
+            }
+            else if(num == candidate)
+                counter++;
+            else
+                counter--;
+        }
+        
+        return candidate;
+    }
+}
+```
+
 ### References
 1. https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm
 2. https://www.quora.com/What-is-the-proof-of-correctness-of-Moores-voting-algorithm
