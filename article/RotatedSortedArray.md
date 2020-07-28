@@ -7,7 +7,6 @@ An array is sorted in ascending order and rotated at some unknown pivots.
 ## Properties
 1. The left part and right part of the inflection point (red line shown as below) are both sorted in ascending order.
 ![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/roated_sorted_array_2.png)
-
 2. Minimal value of left part is greater than maximum value of right part.
 ![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/roated_sorted_array_3.png)
 
@@ -60,6 +59,6 @@ An array is sorted in ascending order and rotated at some unknown pivots.
     }
 }
   ```
-- [LC 81 Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii)
+2. [LC 81 Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii)
 - LC 153 Find Minimum in Rotated Sorted Array
 - LC 154 Find Minimum in Rotated Sorted Array II
