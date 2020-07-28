@@ -6,17 +6,16 @@ An array is sorted in ascending or descending order and then rotated at some unk
 
 
 ## Properties
-In math, an inflection point is a point on a curve at which the sign of curvature changes. In a rotated sorted array, we call a point inflection point (red line shown as below) such as all the elements in its left interval are greater than the first element, and all the elements in its right interval are less than the first element.
+In math, an inflection point is a point on a curve at which the sign of curvature changes. In a rotated sorted array, we call a point inflection point (red line shown as below) such that all the elements in its left interval are greater than the first element, and all the elements in its right interval are less than the first element.
 ![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/roated_sorted_array_2.png)
 
 
 ## [LC 33 Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/submissions/)
   
-    Similar to the regular binary search, the idea of solving this problem is keep narrowing down the range where the target could exist. However, we can't eliminate half of the elements by just comparing target and nums[mid] every time since the entire array is neither in ascending order nor in descending order after rotating. 
-    
-    But we can still use monotone intervals to narrow down the range where the target could be. Everytime we check whether the target is within a monotone interval and then narrow down the search range.
-    - If nums[mid] >= nums[left] then [left, mid] is a monotone interval in which all the elements are sorted in ascending order. In this case, if target is within range [left, mid) then we narrow down search range to [left,mid-1], otherwise we narrow down search range to [mid+1, right]. 
-    - If nums[mid] < nums[left] then [mid, right] is a montone interval in which all the elements are sorted in ascending order. In this case, if target is within range (mid,right] then we narrow down search range to [mid+1,right], otherwise we narrow down search range to [left,mid-1].
+Same as the regular binary search, the idea of solving this problem is keep narrowing down the search range until the target is found. However, we can't eliminate half of the elements every time by just comparing target and nums[mid] since the entire array is neither in ascending order nor in descending order after the rotation. But we can still find a monotone interval and use it to narrow down the search range. 
+   
+   - If nums[mid] >= nums[left] then [left, mid] is a monotone interval in which all the elements are sorted in ascending order. In this case, if target is within range [left, mid) then we narrow down search range to [left,mid-1], otherwise we narrow down search range to [mid+1, right]. 
+   - If nums[mid] < nums[left] then [mid, right] is a montone interval in which all the elements are sorted in ascending order. In this case, if target is within range (mid,right] then we narrow down search range to [mid+1,right], otherwise we narrow down search range to [left,mid-1].
 
    <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" data-canonical-src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" width="460" height="200" />
   
@@ -58,15 +57,15 @@ In math, an inflection point is a point on a curve at which the sign of curvatur
         }
 ```
 
-2. [LC 81 Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii)
+## [LC 81 Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii)
 
-    The main difference between LC 81 and LC33 is that LC 81 may have duplicates in the rotated sorted array while LC 33 doesn't. But we still can find the monotone interval and use it to narrow down the search range by comparing nums[mid] and nums[left].
+The main difference between LC 81 and LC33 is that LC 81 may have duplicates in the rotated sorted array while LC 33 doesn't. But we still can find the monotone interval and use it to narrow down the search range by comparing nums[mid] and nums[left].
     - if nums[mid] >= nums[left], then [left,mid] is a monotone interval in which all the elements are sorted in ascending order.
     - if nums[mid] < nums[left], then [mid, right] is a montone interval in which all the elements are sorted in ascending order.
 
     ![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_5.png)
     
-    Since the array may contain duplicates, we may have a case that even nums[mid] >= nums[left], range [left,mid] is not a montone interval. If this is the case, then it's guranteed that nums[right] == nums[mid] as well (if not, the array won't be a rotated sorted array). In this case, we can narrow down the search range by moving left pointer rightward by 1 and moving right ponter leftward by one, because:
+Since the array may contain duplicates, we may have a case that even nums[mid] >= nums[left], range [left,mid] is not a montone interval. If this is the case, then it's guranteed that nums[right] == nums[mid] as well (if not, the array won't be a rotated sorted array). In this case, we can narrow down the search range by moving left pointer rightward by 1 and moving right ponter leftward by one, because:
     - if target == nums[mid], then target will be found later and we can narrow down the search range.
     - if target != nums[mid], then the operation will narrow down the search range.
     
