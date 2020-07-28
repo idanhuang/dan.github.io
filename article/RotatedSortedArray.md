@@ -17,7 +17,7 @@ Same as the regular binary search, the idea of solving this problem is keep narr
    - If nums[mid] >= nums[left] then [left, mid] is a monotone interval in which all the elements are sorted in ascending order. In this case, if target is within range [left, mid) then we narrow down search range to [left,mid-1], otherwise we narrow down search range to [mid+1, right]. 
    - If nums[mid] < nums[left] then [mid, right] is a montone interval in which all the elements are sorted in ascending order. In this case, if target is within range (mid,right] then we narrow down search range to [mid+1,right], otherwise we narrow down search range to [left,mid-1].
 
-   <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" data-canonical-src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" width="460" height="200" />
+   <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" data-canonical-src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" width="550" height="250" />
   
 ```C#
         public class Solution {
@@ -63,13 +63,13 @@ The main difference between LC 81 and LC33 is that LC 81 may have duplicates in 
     - if nums[mid] >= nums[left], then [left,mid] is a monotone interval in which all the elements are sorted in ascending order.
     - if nums[mid] < nums[left], then [mid, right] is a montone interval in which all the elements are sorted in ascending order.
 
-    ![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_5.png)
+  ![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_5.png)
     
 Since the array may contain duplicates, we may have a case that even nums[mid] >= nums[left], range [left,mid] is not a montone interval. If this is the case, then it's guranteed that nums[right] == nums[mid] as well (if not, the array won't be a rotated sorted array). In this case, we can narrow down the search range by moving left pointer rightward by 1 and moving right ponter leftward by one, because:
     - if target == nums[mid], then target will be found later and we can narrow down the search range.
     - if target != nums[mid], then the operation will narrow down the search range.
     
-      <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" data-canonical src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" width="360" height="200" />
+   <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" data-canonical src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" width="360" height="200" />
 
 ```C#
     public class Solution {
