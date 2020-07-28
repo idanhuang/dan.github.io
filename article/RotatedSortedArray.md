@@ -21,7 +21,7 @@ An array is sorted in ascending order and rotated at some unknown pivots.
     - If nums[mid] >= nums[left] then [left, mid] is a monotone interval in which all the elements are sorted in ascending order. In this case, if target is within range [left, mid) then we narrow down search range to [left,mid-1], otherwise we narrow down search range to [mid+1, right]. 
     - If nums[mid] < nums[left] then [mid, right] is a montone interval in which all the elements are sorted in ascending order. In this case, if target is within range (mid,right] then we narrow down search range to [mid+1,right], otherwise we narrow down search range to [left,mid-1].
 
-<img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" data-canonical-src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" width="480" height="200" />
+   <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" data-canonical-src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" width="480" height="200" />
   
   ```C#
   public class Solution {
