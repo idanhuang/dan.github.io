@@ -68,10 +68,52 @@ An array is sorted in ascending order and rotated at some unknown pivots.
 
     ![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_5.png)
     
-    Since the array may contain duplicates, we may have a case that even nums[mid] >= nums[left], range [left,mid] is not a montone interval. If this is the case, then it's guranteed that nums[right] == nums[mid] as well (if not, the array won't be a rotated sorted array).
+    Since the array may contain duplicates, we may have a case that even nums[mid] >= nums[left], range [left,mid] is not a montone interval. If this is the case, then it's guranteed that nums[right] == nums[mid] as well (if not, the array won't be a rotated sorted array). In this case, we can narrow down the search range by moving left pointer rightward by 1 and moving right ponter leftward by one, because:
+    - if target == nums[mid], then target will be found later and we can narrow down the search range.
+    - if target != nums[mid], then the operation will narrow down the search range.
     
       <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" data-canonical src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" width="360" height="200" />
 
+```C#
+    public class Solution {
+        public bool Search(int[] nums, int target) {
+
+            if(nums == null || nums.Length == 0)
+                return false;
+
+            int left = 0, right = nums.Length - 1;
+
+            while(left <= right)
+            {
+                int mid = left + (right - left) / 2;
+
+                if(target == nums[mid])
+                    return true;
+                else if(nums[mid] == nums[left] && nums[mid] == nums[right])
+                {
+                    left++;
+                    right--;
+                }
+                else if(nums[mid] >= nums[left])
+                {
+                    if(target >= nums[left] && target < nums[mid])
+                        right = mid - 1;
+                    else
+                        left = mid + 1;
+                }
+                else
+                {
+                    if(target > nums[mid] && target <= nums[right])
+                        left = mid + 1;
+                    else
+                        right = mid - 1;
+                }
+            }
+
+            return false;
+        }
+    }
+```
 
 - LC 153 Find Minimum in Rotated Sorted Array
 - LC 154 Find Minimum in Rotated Sorted Array II
