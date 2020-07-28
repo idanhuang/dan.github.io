@@ -68,8 +68,8 @@ The main difference between LC 81 and LC33 is that LC 81 may have duplicates in 
     
 Since the array may contain duplicates, we may have a case that even nums[mid] >= nums[left], range [left,mid] is not a montone interval. If this is the case, then it's guranteed that nums[right] == nums[mid] as well (if not, the array won't be a rotated sorted array). In this case, we can narrow down the search range by moving left pointer rightward by 1 and moving right ponter leftward by one, because:
 
-- if target == nums[mid], then target will be found later and we can narrow down the search range.
-- if target != nums[mid], then the operation will narrow down the search range.
+  - if target == nums[mid], then target will be found later and we can narrow down the search range.
+  - if target != nums[mid], then the operation will narrow down the search range.
     
    <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" data-canonical src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" width="360" height="200" />
 
