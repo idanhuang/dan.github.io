@@ -22,43 +22,51 @@ An array is sorted in ascending order and rotated at some unknown pivots.
 
    <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" data-canonical-src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_4.png" width="460" height="200" />
   
-  ```C#
-  public class Solution {
-    public int Search(int[] nums, int target) {
-        
-        if(nums == null || nums.Length == 0)
-            return -1;
-        
-        int left = 0, right = nums.Length - 1;
-        
-        while(left <= right)
-        {
-            int mid = left + (right - left) / 2;
-            
-            if(target == nums[mid])
-            {
-                return mid;
-            }
-            else if(nums[mid] >= nums[left])
-            {
-                if(target >= nums[left] && target < nums[mid])
-                    right = mid - 1;
-                else
-                    left = mid + 1;
-            }
-            else
-            {
-                if(target > nums[mid] && target <= nums[right])
-                    left = mid + 1;
-                else
-                    right = mid - 1;
+```C#
+        public class Solution {
+            public int Search(int[] nums, int target) {
+
+                if(nums == null || nums.Length == 0)
+                    return -1;
+
+                int left = 0, right = nums.Length - 1;
+
+                while(left <= right)
+                {
+                    int mid = left + (right - left) / 2;
+
+                    if(target == nums[mid])
+                    {
+                        return mid;
+                    }
+                    else if(nums[mid] >= nums[left])
+                    {
+                        if(target >= nums[left] && target < nums[mid])
+                            right = mid - 1;
+                        else
+                            left = mid + 1;
+                    }
+                    else
+                    {
+                        if(target > nums[mid] && target <= nums[right])
+                            left = mid + 1;
+                        else
+                            right = mid - 1;
+                    }
+                }
+
+                return -1;
             }
         }
-        
-        return -1;
-    }
-}
-  ```
+```
+
 2. [LC 81 Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii)
+
+The main difference between LC 81 and LC33 is that LC 81 may have duplicates in the rotated sorted array while LC 33 doesn't. But we still can find and use the monotone interval to narrow down the search range by comparing nums[mid] and nums[left].
+- if nums[mid] >= nums[left], then [left,mid] is a monotone interval in which all the elements are sorted in ascending order.
+- if nums[mid] < nums[left], then [mid, right] is a montone interval in which all the elements are sorted in ascending order.
+
+![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_5.png)
+
 - LC 153 Find Minimum in Rotated Sorted Array
 - LC 154 Find Minimum in Rotated Sorted Array II
