@@ -60,14 +60,16 @@ Same as the regular binary search, the idea of solving this problem is keep narr
 ## [LC 81 Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii)
 
 The main difference between LC 81 and LC33 is that LC 81 may have duplicates in the rotated sorted array while LC 33 doesn't. But we still can find the monotone interval and use it to narrow down the search range by comparing nums[mid] and nums[left].
+
     - if nums[mid] >= nums[left], then [left,mid] is a monotone interval in which all the elements are sorted in ascending order.
     - if nums[mid] < nums[left], then [mid, right] is a montone interval in which all the elements are sorted in ascending order.
 
   ![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_5.png)
     
 Since the array may contain duplicates, we may have a case that even nums[mid] >= nums[left], range [left,mid] is not a montone interval. If this is the case, then it's guranteed that nums[right] == nums[mid] as well (if not, the array won't be a rotated sorted array). In this case, we can narrow down the search range by moving left pointer rightward by 1 and moving right ponter leftward by one, because:
-    - if target == nums[mid], then target will be found later and we can narrow down the search range.
-    - if target != nums[mid], then the operation will narrow down the search range.
+
+- if target == nums[mid], then target will be found later and we can narrow down the search range.
+- if target != nums[mid], then the operation will narrow down the search range.
     
    <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" data-canonical src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" width="360" height="200" />
 
