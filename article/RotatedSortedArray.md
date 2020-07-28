@@ -60,6 +60,6 @@ An array is sorted in ascending order and rotated at some unknown pivots.
     }
 }
   ```
-- LC 81 Search in Rotated Sorted Array II
+- [LC 81 Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii)
 - LC 153 Find Minimum in Rotated Sorted Array
 - LC 154 Find Minimum in Rotated Sorted Array II
