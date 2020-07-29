@@ -57,7 +57,7 @@ Same as the regular binary search, the idea of solving this problem is keep narr
 
 ## [LC 81 Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii)
 
-The main difference between LC 81 and LC33 is that LC 81 may have duplicates in the rotated sorted array while LC 33 doesn't. But we still can find monotone intervals and use them to keep narrowing down the search range by comparing nums[mid] and nums[left]. Below diagram shows all the rotated array that are genrated by an sorted array that has duplicates. Elements in intervals highlighed in green are sorted in ascending order.
+The main difference between LC 81 and LC33 is that LC 81 may have duplicates in the rotated sorted array while LC 33 doesn't. But we still can find monotone intervals and use them to keep narrowing down the search range by comparing nums[mid] and nums[left]. Below diagram shows how to find monotone intervals by compaing nums[mid] and nums[left]. Elements in intervals highlighed in green are sorted in ascending order.
 
    - if nums[mid] >= nums[left], then [left, mid] is a monotone interval in which all the elements are sorted in ascending order.
    - if nums[mid] < nums[left], then [mid, right] is a monotone interval in which all the elements are sorted in ascending order.
