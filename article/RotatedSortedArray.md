@@ -64,9 +64,9 @@ The main difference between LC 81 and LC33 is that LC 81 may have duplicates in 
 
   ![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_5.png)
     
-Since the array may contain duplicates, there is a special cases that when nums[mid] == nums[left], range [left, mid] is not a monotone interval. So we need to handle this case sperately. When nums[mid] == nums[left], it's guranteed that nums[right] == nums[mid] as well (if not, the array won't be a rotated sorted array). And we can narrow down the search range by moving left pointer rightward by 1 and moving right pointer leftward by one, because:
+Since the array may contain duplicates, there is a special case that when nums[mid] == nums[left], range [left, mid] is not a monotone interval. So we need to handle this case sperately. When nums[mid] == nums[left], it's guranteed that nums[right] == nums[mid] as well (if not, the array won't be a rotated sorted array). And we can narrow down the search range by moving left pointer rightward by 1 and moving right pointer leftward by one, because:
 
-  - if target == nums[mid], then target will be found later and we can narrow down the search range.
+  - if target == nums[mid], then target will be found later after narrowing down the search range.
   - if target != nums[mid], then the operation will narrow down the search range.
     
    <img src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" data-canonical src="https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_6.png" width="360" height="200" />
