@@ -61,8 +61,8 @@ Same as the regular binary search, the idea of solving this problem is keep narr
 
 The main difference between LC 81 and LC33 is that LC 81 may have duplicates in the rotated sorted array while LC 33 doesn't. But we still can find the monotone interval and use it to narrow down the search range by comparing nums[mid] and nums[left].
 
-    - if nums[mid] >= nums[left], then [left,mid] is a monotone interval in which all the elements are sorted in ascending order.
-    - if nums[mid] < nums[left], then [mid, right] is a montone interval in which all the elements are sorted in ascending order.
+   - if nums[mid] >= nums[left], then [left,mid] is a monotone interval in which all the elements are sorted in ascending order.
+   - if nums[mid] < nums[left], then [mid, right] is a montone interval in which all the elements are sorted in ascending order.
 
   ![image](https://github.com/idanhuang/idanhuang.github.io/blob/master/image/rotated_sorted_array_5.png)
     
