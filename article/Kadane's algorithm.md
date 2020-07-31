@@ -3,7 +3,7 @@
 In computer science, maximum subarray problem is the task to find a contiguous subarray with the largest sum. This problem was proposed by Uif Grenander in 1977. In 1984, Jay Kadane designed an O(n) algorithm to solve the problem. We call the algorithm "Kadane's algorithm".
 
 ## Brute-force approach
-We can use brute-force to calculate sum of all possible subarray, and get the maximum subarry sum. Time complexity of brute-force solution will be O(n^3).
+We can use brute-force to calculate sum of all possible subarray, and then get the maximum sum. Time complexity of brute-force solution will be O(n^3).
 ```C#
 public class Solution {
     public int MaxSubArray(int[] nums) {
@@ -33,7 +33,7 @@ public class Solution {
 }
 ```
 
-The brute-force solution can be improved to O(n^2) complexity by using a variable to store the running sum at all possible positions.
+The brute-force solution can be improved to O(n^2) time complexity by using a variable to store the running sum at all possible positions.
 ```C#
 public class Solution {
     public int MaxSubArray(int[] nums) {
@@ -60,9 +60,7 @@ public class Solution {
 ```
 
 ## Dynamic Programming approach
-Instead of picking each index as the starting point of the subarray in the brute-force approach, DP approach picks each index as the ending point. So when calculating sum of the next subarray, the algorithm can take advantage of the previous calculations. sum[i] = sum[i-1] + nums[i] 
-
-This DP approach will improve the time complexity to O(n). It takes O(n) space.
+Instead of using each index as the starting position of subarray in the brute-force approach, DP approach uses each index as the ending point, so that when calculating sum of the next subarray, the algorithm can take advantage of the previous calculations. The formula is: sum[i] = sum[i-1] + nums[i]. This DP approach will improve the time complexity to O(n) and has O(n) space complexity.
 
 ```C#
 public class Solution {
@@ -110,3 +108,4 @@ public class Solution {
 1. https://en.wikipedia.org/wiki/Maximum_subarray_problem
 2. https://zhuanlan.zhihu.com/p/85188269
 3. https://stackoverflow.com/questions/41904746/why-is-the-maximum-sum-subarray-brute-force-on2
+4. https://leetcode.com/problems/maximum-subarray/discuss/764810/From-brute-force-to-DP-to-Kadane's-alogrithm
