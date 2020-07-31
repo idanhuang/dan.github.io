@@ -64,7 +64,7 @@ Instead of picking each index as the starting point of the subarray in the brute
 
 This DP approach will improve the time complexity to O(n). It takes O(n) space.
 
-```
+```C#
 public class Solution {
     public int MaxSubArray(int[] nums) {
         
@@ -86,7 +86,7 @@ public class Solution {
 
 ## Kadane's algorithm
 Kadane's algorithm is implemented on top of the DP approach. It uses a local variable to track maximum sum of all subarray. This can improve the time space to O(1).
-```
+```C#
 public class Solution {
     public int MaxSubArray(int[] nums) {
         
