@@ -60,7 +60,32 @@ public class Solution {
 ```
 
 ## Dynamic Programming approach
-Brute-force approach picks a position(index) as the starting point and then calculate sum of all subarray. 
+Instead of picking each index as the starting point of the subarray in the brute-force approach, DP approach picks each index as the ending point. So when calculating sum of the next subarray, the algorithm can take advantage of the previous calculations. sum[i] = sum[i-1] + nums[i] 
+
+This DP approach will improve the time complexity to O(n). It takes O(n) space.
+
+```
+public class Solution {
+    public int MaxSubArray(int[] nums) {
+        
+        if(nums == null || nums.Length == 0)
+            return 0;
+        
+        int[] dp = new int[nums.Length];
+        dp[0] = nums[0];
+        
+        for(int i = 1; i < nums.Length; i++)
+        {
+            dp[i] = Math.Max(dp[i - 1] + nums[i], nums[i]);
+        }
+        
+        return dp.Max();        
+    }
+}
+```
+
+
+
 
 ### References
 1. https://en.wikipedia.org/wiki/Maximum_subarray_problem
