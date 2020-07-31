@@ -2,8 +2,8 @@
 
 In computer science, maximum subarray problem is the task to find a contiguous subarray with the largest sum. This problem was proposed by Uif Grenander in 1977. In 1984, Jay Kadane designed an O(n) algorithm to solve the problem. We call the algorithm "Kadane's algorithm".
 
-## Brute-force
-We can use brute-force to calculate sum of all the possible subarray, and get the maximum subarry sum. Time complexity of brute-force solution will be O(n^3).
+## Brute-force approach
+We can use brute-force to calculate sum of all possible subarray, and get the maximum subarry sum. Time complexity of brute-force solution will be O(n^3).
 ```C#
 public class Solution {
     public int MaxSubArray(int[] nums) {
@@ -33,6 +33,36 @@ public class Solution {
 }
 ```
 
+The brute-force solution can be improved to O(n^2) complexity by using a variable to store the running sum at all possible positions.
+```C#
+public class Solution {
+    public int MaxSubArray(int[] nums) {
+        
+        if(nums == null || nums.Length == 0)
+            return 0;
+        
+        int maxSum = nums[0];
+        
+        for(int i = 0; i < nums.Length; i++)
+        {
+            int currSum = 0;
+                
+            for(int j = i; j < nums.Length; j++)
+            {
+                currSum += nums[j];
+                maxSum = Math.Max(maxSum, currSum);
+            }
+        }
+        
+        return maxSum;
+    }
+}
+```
+
+## Dynamic Programming approach
+Brute-force approach picks a position(index) as the starting point and then calculate sum of all subarray. 
+
 ### References
 1. https://en.wikipedia.org/wiki/Maximum_subarray_problem
 2. https://zhuanlan.zhihu.com/p/85188269
+3. https://stackoverflow.com/questions/41904746/why-is-the-maximum-sum-subarray-brute-force-on2
