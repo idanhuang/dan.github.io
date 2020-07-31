@@ -84,8 +84,27 @@ public class Solution {
 }
 ```
 
-
-
+## Kadane's algorithm
+Kadane's algorithm is implemented on top of the DP approach. It uses a local variable to track maximum sum of all subarray. This can improve the time space to O(1).
+```
+public class Solution {
+    public int MaxSubArray(int[] nums) {
+        
+        if(nums == null || nums.Length == 0)
+            return 0;
+        
+        int maxSumSoFar = nums[0], maxSumEndingHere = nums[0];
+        
+        for(int i = 1; i < nums.Length; i++)
+        {
+            maxSumEndingHere = Math.Max(maxSumEndingHere + nums[i], nums[i]);
+            maxSumSoFar = Math.Max(maxSumSoFar, maxSumEndingHere);
+        }
+        
+        return maxSumSoFar;        
+    }
+}
+```
 
 ### References
 1. https://en.wikipedia.org/wiki/Maximum_subarray_problem
