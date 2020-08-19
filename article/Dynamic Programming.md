@@ -1,5 +1,13 @@
 # Dynamic Programming
 
+## What is dynamic programming
+
+Dynamic programming was developed by Richard Bellman in the 1950s. It is a technique for solving an optimization problem by breaking it down into simpler subproblems, and utilizing the fact that the optimal solution to the overall problem depends upon the optimal solution to its subproblems.
+
+Why it is called dynamic programming"?
+
+## Properties of dynamic programming questions
+
 
 
 ## Recursive
@@ -13,7 +21,7 @@ public int Fibonacci(int n)
 }  
 ```
 
-## Bottom Up tabulation
+## Bottom Up (Tabulation)
 ```C#
 public int Fibonacci(int n)
 {
@@ -31,7 +39,7 @@ public int Fibonacci(int n)
 }
 ```
 
-## Top Down memoization
+## Top Down (Memoization)
 ```C#
 public int[] memo;
 
